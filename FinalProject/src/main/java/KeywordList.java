@@ -136,10 +136,10 @@ public class KeywordList {
 		lst.add(new Keyword("笑", 1));
 		
 
-		lst.add(new Keyword("comedy", 15));
-		lst.add(new Keyword("funny", 1));
-		lst.add(new Keyword("hilarious", 1));
-		lst.add(new Keyword("humor", 1));
+		lst.add(new Keyword("comedy", 5));
+		lst.add(new Keyword("funny", 3));
+		lst.add(new Keyword("hilarious", 3));
+		lst.add(new Keyword("humor", 3));
 	}
 
 	public void thriller() {
@@ -158,15 +158,15 @@ public class KeywordList {
 		lst.add(new Keyword("嚇", 2));
 		lst.add(new Keyword("毛骨悚然", 1));
 
-		lst.add(new Keyword("thriller", 15));
-		lst.add(new Keyword("suspense", 15));
-		lst.add(new Keyword("horror", 15));
-		lst.add(new Keyword("murder", 1));
-		lst.add(new Keyword("detective", 1));
-		lst.add(new Keyword("crime", 1));
-		lst.add(new Keyword("supernatural", 1));
-		lst.add(new Keyword("terrify", 1));
-		lst.add(new Keyword("horrify", 1));
+		lst.add(new Keyword("thriller", 5));
+		lst.add(new Keyword("suspense", 5));
+		lst.add(new Keyword("horror", 5));
+		lst.add(new Keyword("murder", 4));
+		lst.add(new Keyword("detective", 4));
+		lst.add(new Keyword("crime", 4));
+		lst.add(new Keyword("supernatural", 3));
+		lst.add(new Keyword("terrify", 3));
+		lst.add(new Keyword("horrify", 3));
 	}
 	
 	public void sports() {
