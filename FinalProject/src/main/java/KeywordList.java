@@ -115,16 +115,15 @@ public class KeywordList {
 	}
 
 	public void action() {
-		lst.add(new Keyword("動作", 15));
-		lst.add(new Keyword("冒險", 15));
-		lst.add(new Keyword("戰爭", 1));
-		lst.add(new Keyword("戰鬥", 1));
-		lst.add(new Keyword("諜", 1));
-		lst.add(new Keyword("武", 1));
-		lst.add(new Keyword("特效", 1));
-		lst.add(new Keyword("特技", 1));
+		lst.add(new Keyword("動作", 5));
+		lst.add(new Keyword("冒險", 5));
+		lst.add(new Keyword("戰爭", 4));
+		lst.add(new Keyword("戰鬥", 4));
+		lst.add(new Keyword("諜", 3));
+		lst.add(new Keyword("武", 3));
+		lst.add(new Keyword("特效", 2));
+		lst.add(new Keyword("特技", 2));
 		lst.add(new Keyword("賽車", 1));
-		lst.add(new Keyword("飛車", 1));
 	}
 
 	public void comedy() {
@@ -144,19 +143,19 @@ public class KeywordList {
 	}
 
 	public void thriller() {
-		lst.add(new Keyword("懸疑", 15));
-		lst.add(new Keyword("驚悚", 15));
-		lst.add(new Keyword("恐怖", 15));
-		lst.add(new Keyword("燒腦", 1));
-		lst.add(new Keyword("推理", 1));
-		lst.add(new Keyword("謀殺", 1));
-		lst.add(new Keyword("犯罪", 1));
-		lst.add(new Keyword("殺人", 1));
-		lst.add(new Keyword("靈異", 1));
-		lst.add(new Keyword("駭人", 1));
-		lst.add(new Keyword("鬼片", 1));
-		lst.add(new Keyword("顫慄", 1));
-		lst.add(new Keyword("嚇", 1));
+		lst.add(new Keyword("懸疑", 5));
+		lst.add(new Keyword("驚悚", 5));
+		lst.add(new Keyword("恐怖", 5));
+		lst.add(new Keyword("燒腦", 4));
+		lst.add(new Keyword("推理", 4));
+		lst.add(new Keyword("謀殺", 4));
+		lst.add(new Keyword("犯罪", 4));
+		lst.add(new Keyword("殺人", 3));
+		lst.add(new Keyword("靈異", 3));
+		lst.add(new Keyword("駭人", 3));
+		lst.add(new Keyword("鬼片", 3));
+		lst.add(new Keyword("顫慄", 2));
+		lst.add(new Keyword("嚇", 2));
 		lst.add(new Keyword("毛骨悚然", 1));
 
 		lst.add(new Keyword("thriller", 15));
