@@ -173,7 +173,7 @@ public class KeywordList {
 		lst.add(new Keyword("運動", 5));
 		lst.add(new Keyword("競技", 5));
 		lst.add(new Keyword("熱血", 4));
-		lst.add(new Keyword("青春", 1));
+		lst.add(new Keyword("青春", 2));
 	}
 
 	public ArrayList<Keyword> getKeywordList() {
