@@ -49,20 +49,25 @@ public class KeywordList {
 
 	public void animation() {
 		lst.add(new Keyword("動漫", 5));
+		lst.add(new Keyword("アニメ", 5));
 		lst.add(new Keyword("動畫", 5));
+		lst.add(new Keyword("アニメーション", 5));
 		lst.add(new Keyword("番", 5));
 		lst.add(new Keyword("漫畫", 4));
+		lst.add(new Keyword("漫画", 4));
 		lst.add(new Keyword("劇場版", 4));
 		lst.add(new Keyword("新番", 4));
 		lst.add(new Keyword("輕改", 3));
 		lst.add(new Keyword("聲優", 3));
 		lst.add(new Keyword("巴哈姆特", 3));
 		lst.add(new Keyword("票房", 3));
+		lst.add(new Keyword("興行収入", 3));
 		lst.add(new Keyword("動畫瘋", 3));
 		lst.add(new Keyword("漫改", 2));
 		lst.add(new Keyword("木棉花", 2));
 		lst.add(new Keyword("東立", 2));
 		lst.add(new Keyword("劇情", 1));
+		lst.add(new Keyword("ストーリー", 1));
 		lst.add(new Keyword("東映", 1));
 		lst.add(new Keyword("吉卜力", 1));
 
@@ -81,16 +86,40 @@ public class KeywordList {
 	}
 
 	public void campus() {
+		lst.add(new Keyword("浪漫", 5));
+		lst.add(new Keyword("ロマンチック", 5));
+		lst.add(new Keyword("戀愛", 5));
+		lst.add(new Keyword("恋愛", 5));
+		lst.add(new Keyword("れんあい", 5));
+		lst.add(new Keyword("愛", 5));
+		lst.add(new Keyword("喜歡", 4));
+		lst.add(new Keyword("好きです", 4));
 		lst.add(new Keyword("校園", 5));
 		lst.add(new Keyword("青春", 5));
 		lst.add(new Keyword("社團", 4));
 		lst.add(new Keyword("高中生", 4));
+		lst.add(new Keyword("高校生", 4));
 		lst.add(new Keyword("大學生", 4));
-		lst.add(new Keyword("戀愛", 3));
-		lst.add(new Keyword("喜歡", 3));
+		lst.add(new Keyword("大学生", 4));
+		lst.add(new Keyword("學生", 4));
+		lst.add(new Keyword("学生", 4));
+		lst.add(new Keyword("同學", 3));
+		lst.add(new Keyword("クラスメート人", 3));
 		lst.add(new Keyword("戀人", 3));
 		lst.add(new Keyword("情", 2));
 		lst.add(new Keyword("吻", 2));
+		
+		lst.add(new Keyword("romance", 5));
+		lst.add(new Keyword("romantic", 5));
+		lst.add(new Keyword("campus", 5));
+		lst.add(new Keyword("affection", 4));
+		lst.add(new Keyword("love", 4));
+		lst.add(new Keyword("student", 4));
+		lst.add(new Keyword("classmate", 4));
+		lst.add(new Keyword("couple", 3));
+		lst.add(new Keyword("relationship", 3));
+		lst.add(new Keyword("lover", 3));
+		lst.add(new Keyword("kiss", 2));
 	}
 
 	public void fantasy() {
@@ -112,11 +141,29 @@ public class KeywordList {
 		lst.add(new Keyword("神", 2));
 		lst.add(new Keyword("鬼", 2));
 		lst.add(new Keyword("龍", 2));
+		
+		lst.add(new Keyword("fantasy", 5));
+		lst.add(new Keyword("sci-fi", 5));
+		lst.add(new Keyword("science fiction", 5));
+		lst.add(new Keyword("alien", 4));
+		lst.add(new Keyword("space travel", 3));
+		lst.add(new Keyword("time travel", 3));
+		lst.add(new Keyword("magic", 3));
+		lst.add(new Keyword("power", 3));
+		lst.add(new Keyword("sorcerer", 2));
+		lst.add(new Keyword("robot", 2));
+		lst.add(new Keyword("monster", 2));
+		lst.add(new Keyword("fairy", 2));
+		lst.add(new Keyword("tale", 2));
+		lst.add(new Keyword("myth", 2));
+		lst.add(new Keyword("god", 2));
 	}
 
 	public void action() {
 		lst.add(new Keyword("動作", 5));
+		lst.add(new Keyword("アクション", 5));
 		lst.add(new Keyword("冒險", 5));
+		lst.add(new Keyword("アドベンチャー", 5));
 		lst.add(new Keyword("戰爭", 4));
 		lst.add(new Keyword("戰鬥", 4));
 		lst.add(new Keyword("諜", 3));
@@ -124,10 +171,20 @@ public class KeywordList {
 		lst.add(new Keyword("特效", 2));
 		lst.add(new Keyword("特技", 2));
 		lst.add(new Keyword("賽車", 1));
+		
+		lst.add(new Keyword("action", 5));
+		lst.add(new Keyword("adventure", 5));
+		lst.add(new Keyword("war", 4));
+		lst.add(new Keyword("spy", 3));
+		lst.add(new Keyword("martial art", 3));
+		lst.add(new Keyword("blast effect", 2));
+		lst.add(new Keyword("special effect", 2));
 	}
 
 	public void comedy() {
 		lst.add(new Keyword("喜劇", 5));
+		lst.add(new Keyword("きげき", 5));
+		lst.add(new Keyword("コメディ", 5));
 		lst.add(new Keyword("幽默", 5));
 		lst.add(new Keyword("搞笑", 5));
 		lst.add(new Keyword("有趣", 4));
@@ -137,6 +194,8 @@ public class KeywordList {
 		
 
 		lst.add(new Keyword("comedy", 5));
+		lst.add(new Keyword("sitcom", 5));
+		lst.add(new Keyword("romcom", 5));
 		lst.add(new Keyword("funny", 3));
 		lst.add(new Keyword("hilarious", 3));
 		lst.add(new Keyword("humor", 3));
@@ -144,8 +203,11 @@ public class KeywordList {
 
 	public void thriller() {
 		lst.add(new Keyword("懸疑", 5));
+		lst.add(new Keyword("サスペンス", 5));
 		lst.add(new Keyword("驚悚", 5));
+		lst.add(new Keyword("スリラー", 5));
 		lst.add(new Keyword("恐怖", 5));
+		lst.add(new Keyword("ホラー", 5));
 		lst.add(new Keyword("燒腦", 4));
 		lst.add(new Keyword("推理", 4));
 		lst.add(new Keyword("謀殺", 4));
@@ -171,9 +233,35 @@ public class KeywordList {
 	
 	public void sports() {
 		lst.add(new Keyword("運動", 5));
+		lst.add(new Keyword("うんどう", 5));
 		lst.add(new Keyword("競技", 5));
+		lst.add(new Keyword("コンペ", 5));
 		lst.add(new Keyword("熱血", 4));
-		lst.add(new Keyword("青春", 2));
+		lst.add(new Keyword("少年", 4));
+		lst.add(new Keyword("籃球", 3));
+		lst.add(new Keyword("羽球", 3));
+		lst.add(new Keyword("排球", 3));
+		lst.add(new Keyword("網球", 3));
+		lst.add(new Keyword("桌球", 3));
+		lst.add(new Keyword("自行車", 3));
+		lst.add(new Keyword("游泳", 3));
+		
+		lst.add(new Keyword("sports", 5));
+		lst.add(new Keyword("compete", 5));
+		lst.add(new Keyword("athletic", 4));
+		lst.add(new Keyword("on fire", 4));
+		lst.add(new Keyword("warm blood", 4));
+		lst.add(new Keyword("hot-blooded", 4));
+		lst.add(new Keyword("juvenile", 4));
+		lst.add(new Keyword("teenager", 4));
+		lst.add(new Keyword("basketball", 3));
+		lst.add(new Keyword("badminton", 3));
+		lst.add(new Keyword("volleyball", 3));
+		lst.add(new Keyword("tennis", 3));
+		lst.add(new Keyword("table tennis", 3));
+		lst.add(new Keyword("bike", 3));
+		lst.add(new Keyword("bicycle", 3));
+		lst.add(new Keyword("swimming", 3));
 	}
 
 	public ArrayList<Keyword> getKeywordList() {
