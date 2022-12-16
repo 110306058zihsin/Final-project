@@ -19,7 +19,7 @@ public class GoogleQuery {
 	//public String url;//
 	//public String content;//
 	
-	public GoogleQuery(String searchKeyword)
+	public GoogleQuery()
 	{
 		//this.searchKeyword = searchKeyword;//
 		//this.url = "http://www.google.com/search?q="+searchKeyword+"&oe=utf8&num=20";//
@@ -35,7 +35,7 @@ public class GoogleQuery {
 		conn.setRequestProperty("User-agent", "Chrome/107.0.5304.107");
 		InputStream in = conn.getInputStream();
 
-		InputStreamReader inReader = new InputStreamReader(in, "utf-8");
+		InputStreamReader inReader = new InputStreamReader(in, "UTF-8");
 		BufferedReader bufReader = new BufferedReader(inReader);
 		String line = null;
 
@@ -56,7 +56,7 @@ public class GoogleQuery {
 			searchKeyword = comb;
 		}
 		if (!searchKeyword.contains("動漫")) {
-			searchKeyword += "+動漫";
+			searchKeyword += "動漫";
 		}
 
 		
@@ -95,7 +95,7 @@ public class GoogleQuery {
 				System.out.println("Title: " + title + " , url: " + citeUrl);
 				
 				//put title and pair into HashMap
-				retVal.put(title, citeUrl);
+				retVal.put(citeUrl, title);
 
 			} catch (IndexOutOfBoundsException e) 
 			{
