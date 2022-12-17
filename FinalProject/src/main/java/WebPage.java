@@ -7,16 +7,16 @@ import java.util.ArrayList;
 public class WebPage {
 	
 	String url;
-	String decodeURL;
+//	String decodeURL;
 	String title;
 	public WordCounter counter;
 	public double score;
 	
-	public WebPage(String decodeURL,String url, String title){
-		this.decodeURL=decodeURL;
+	public WebPage(String url, String title){
+//		this.decodeURL=decodeURL;
 		this.url = url;
 		this.title = title;
-		this.counter = new WordCounter(decodeURL);	
+		this.counter = new WordCounter(url);	
 	}
 	
 	public void setScore(ArrayList<Keyword> keywords) throws IOException{

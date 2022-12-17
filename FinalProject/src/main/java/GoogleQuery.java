@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLDecoder;
 import java.util.HashMap;
 
 import org.jsoup.Jsoup;
@@ -91,11 +92,11 @@ public class GoogleQuery {
 				{
 					continue;
 				}
-				
-				System.out.println("Title: " + title + " , url: " + citeUrl);
+				String urlstr=URLDecoder.decode(citeUrl.substring(7),"UTF-8");
+				System.out.println("Title: " + title + " , url: " + urlstr);
 				
 				//put title and pair into HashMap
-				retVal.put(citeUrl, title);
+				retVal.put(urlstr, title);
 
 			} catch (IndexOutOfBoundsException e) 
 			{

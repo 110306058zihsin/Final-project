@@ -23,14 +23,14 @@ public class CalcScore {
 		ArrayList<WebPage> rootPages = new ArrayList<>();
 
 		for (String url : webPage.keySet()) {
-			String urlstr =  URLDecoder.decode(url.substring(7), "UTF-8");
+//			String urlstr =  URLDecoder.decode(url.substring(7), "UTF-8");
 			
-			rootPages.add(new WebPage(urlstr,url, webPage.get(url)));
+			rootPages.add(new WebPage(url, webPage.get(url)));
 			
 		}
-//		for(WebPage page:rootPages) {
-//			System.out.print(page.url+"\n");
-//		}
+		for(WebPage page:rootPages) {//
+			System.out.print(page.url+"\n");
+		}
 //		
 //		return score;
 		for (WebPage rootPage : rootPages) {
@@ -38,9 +38,9 @@ public class CalcScore {
 				rootPage.setScore(keywords);
 			} catch (IOException e) {
 				
-				//e.printStackTrace();
+				e.printStackTrace();
 			}
-//			System.out.println(rootPage.score);
+			System.out.println(rootPage.score);//
 			score.put(rootPage.score, rootPage.url);
 		}
 		return score;

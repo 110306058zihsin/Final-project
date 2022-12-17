@@ -27,7 +27,7 @@ public class Main {
 			for(Double b:retVal) {
 				System.out.println(b);
 			}
-		
+//		
 		
 		for(int i=0;i<retVal.size();i++) {
 			String url=score.get(retVal.get(i));
