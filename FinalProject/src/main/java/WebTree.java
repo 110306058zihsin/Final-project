@@ -73,7 +73,7 @@ public class WebTree {
   quickSort1(0, console.size()-1);
   
   for(WebNode node:console) {
-   System.out.println(node.webPage.name+"|"+node.webPage.getScore());
+   System.out.println(node.webPage.title+"|"+node.webPage.getScore());//我把webPage的name改成title了
   }
   
   

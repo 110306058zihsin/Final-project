@@ -9,7 +9,7 @@ public class Main {
 
 		GoogleQuery google = new GoogleQuery();
 
-		HashMap<String, String> webPage = google.query("漫畫");
+		HashMap<String, String> webPage = google.query("漫畫");//query 裡面到時候要看怎麼連前端使用者輸入
 		
 		KeywordList keywords=new KeywordList();
 		

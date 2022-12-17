@@ -27,7 +27,11 @@ public class WebPage {
 		}
 //		1. calculate score
 
-	}	
+	}
+	
+	public double getScore() {
+		return score;
+	}
 }
 //=======
 //public class WebPage {
@@ -50,9 +54,9 @@ public class WebPage {
 //  this.url = url;
 // }
 //
-// public double getScore() {
-//  return score;
-// }
+//	public double getScore() {
+//		return score;
+//	}
 //
 // public void setScore(ArrayList<Keyword> keywords) throws IOException{
 //  score = 0;
