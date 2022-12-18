@@ -86,13 +86,22 @@ public class GoogleQuery {
 			try 
 			{
 				String citeUrl = li.select("a").get(0).attr("href");
+				if (citeUrl.startsWith("/url?q=")) {
+					citeUrl = citeUrl.replace("/url?q=", "");
+				}
+				String[] splittedString = citeUrl.split("&sa=");
+				if (splittedString.length > 1) {
+					citeUrl = splittedString[0];
+				}
 				String title = li.select("a").get(0).select(".vvjwJb").text();
 				
 				if(title.equals("")) 
 				{
 					continue;
 				}
-				String urlstr=URLDecoder.decode(citeUrl.substring(7),"UTF-8");
+				String urlstr=URLDecoder.decode(citeUrl,"UTF-8");
+				citeUrl.replaceAll(" ", "%20");
+
 				System.out.println("Title: " + title + " , url: " + urlstr);
 				
 				//put title and pair into HashMap
