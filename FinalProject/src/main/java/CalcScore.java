@@ -38,7 +38,7 @@ public class CalcScore {
 				rootPage.setScore(keywords);
 			} catch (IOException e) {
 				
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
 			System.out.println(rootPage.score);//
 			score.put(rootPage.score, rootPage.url);

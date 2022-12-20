@@ -85,6 +85,7 @@ public class GoogleQuery {
 		{
 			try 
 			{
+				//解析網址，把網址格式和protocol改成一致，避免訪問失敗
 				String citeUrl = li.select("a").get(0).attr("href");
 				if (citeUrl.startsWith("/url?q=")) {
 					citeUrl = citeUrl.replace("/url?q=", "");
