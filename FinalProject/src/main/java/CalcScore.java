@@ -28,11 +28,11 @@ public class CalcScore {
 			rootPages.add(new WebPage(url, webPage.get(url)));
 			
 		}
-		for(WebPage page:rootPages) {//
-			System.out.print(page.url+"\n");
-		}
-//		
-//		return score;
+		//test 確認存到的網頁數量是否正確ㄋ
+//		for(WebPage page:rootPages) {//
+//			System.out.print(page.url+"\n");
+//		}
+//	
 		for (WebPage rootPage : rootPages) {
 			try {
 				rootPage.setScore(keywords);
@@ -40,6 +40,7 @@ public class CalcScore {
 				
 				//e.printStackTrace();
 			}
+		//test 每個網頁的權重
 			System.out.println(rootPage.score);//
 			score.put(rootPage.score, rootPage.url);
 		}

@@ -1,15 +1,49 @@
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
-//為什麼有些網址會找不到？
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-public class Main {
-	public static void main(String[] args) throws IOException {
+/**
+ * Servlet implementation class TestProject
+ */
+@WebServlet("/Main")
+public class Main extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Main() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html");
+		if(request.getParameter("keyword")== null) {
+			String requestUri = request.getRequestURI();
+			request.setAttribute("requestUri", requestUri);
+			request.getRequestDispatcher("Search.jsp").forward(request, response);
+			return;
+		}
+//		GoogleQuery google = new GoogleQuery(request.getParameter("keyword"));
+//		HashMap<String, String> query = google.query();
 		GoogleQuery google = new GoogleQuery();
 
-		HashMap<String, String> webPage = google.query("漫畫");//query 裡面到時候要看怎麼連前端使用者輸入
+		HashMap<String, String> webPage = google.query(request.getParameter("keyword"));//query 裡面到時候要看怎麼連前端使用者輸入
 		
 		KeywordList keywords=new KeywordList();
 		
@@ -22,18 +56,44 @@ public class Main {
 		List<Double> retVal = calc.sort(score);
 		
 		
+		//test 排序完後的分數
+//			System.out.println(score.keySet());
 		
-			System.out.println(score.keySet());
-			for(Double b:retVal) {
-				System.out.println(b);
-			}
+//			for(Double b:retVal) {
+//				System.out.println(b);
+//			}
 //		
 		
+		HashMap<String,String> query=new HashMap<String,String>();
 		for(int i=0;i<retVal.size();i++) {
 			String url=score.get(retVal.get(i));
 			String title=webPage.get(url);
-			System.out.printf("%s：%s\n",title,url);
+			query.put(title,url);
+//			System.out.printf("%s：%s\n",title,url);
 		}
 		
+		
+		String[][] s = new String[query.size()][2];
+		request.setAttribute("query", s);
+		int num = 0;
+		for(Entry<String, String> entry : query.entrySet()) {
+		    String key = entry.getKey();
+		    String value = entry.getValue();
+		    s[num][0] = key;
+		    s[num][1] = value;
+		    num++;
+		}
+		request.getRequestDispatcher("googleitem.jsp")
+		 .forward(request, response); 
+		
 	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
 }

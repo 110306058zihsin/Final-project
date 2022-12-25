@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public class WebPage {
 	
 	String url;
-//	String decodeURL;
 	String title;
 	public WordCounter counter;
 	public double score;

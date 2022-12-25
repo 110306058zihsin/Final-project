@@ -103,7 +103,8 @@ public class GoogleQuery {
 				String urlstr=URLDecoder.decode(citeUrl,"UTF-8");
 				citeUrl.replaceAll(" ", "%20");
 
-				System.out.println("Title: " + title + " , url: " + urlstr);
+				//test 爬到幾個網址
+//				System.out.println("Title: " + title + " , url: " + urlstr);
 				
 				//put title and pair into HashMap
 				retVal.put(urlstr, title);
