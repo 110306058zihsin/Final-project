@@ -1,3 +1,5 @@
+
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -14,13 +16,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class TestProject
  */
-@WebServlet("/Main")
-public class Main extends HttpServlet {
+@WebServlet("/TestProject")
+public class TestProject extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Main() {
+    public TestProject() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,6 +43,7 @@ public class Main extends HttpServlet {
 		}
 //		GoogleQuery google = new GoogleQuery(request.getParameter("keyword"));
 //		HashMap<String, String> query = google.query();
+		
 		GoogleQuery google = new GoogleQuery();
 
 		HashMap<String, String> webPage = google.query(request.getParameter("keyword"));//query 裡面到時候要看怎麼連前端使用者輸入
@@ -64,21 +67,22 @@ public class Main extends HttpServlet {
 //			}
 //		
 		
-		HashMap<String,String> query=new HashMap<String,String>();
+		//HashMap<String,String> query=new HashMap<String,String>();
 		for(int i=0;i<retVal.size();i++) {
 			String url=score.get(retVal.get(i));
 			String title=webPage.get(url);
-			query.put(title,url);
-//			System.out.printf("%s：%s\n",title,url);
+			//query.put(title,url);
+			System.out.printf("%s：%s\n",title,url);
 		}
 		
 		
-		String[][] s = new String[query.size()][2];
+		String[][] s = new String[webPage.size()][2];
 		request.setAttribute("query", s);
 		int num = 0;
-		for(Entry<String, String> entry : query.entrySet()) {
-		    String key = entry.getKey();
-		    String value = entry.getValue();
+		for(int i=0;i<retVal.size();i++) {
+			String value = score.get(retVal.get(i));
+		    String key = webPage.get(value);
+		    
 		    s[num][0] = key;
 		    s[num][1] = value;
 		    num++;
