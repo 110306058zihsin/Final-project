@@ -26,13 +26,13 @@ text-decoration:underline;
 <body style='background-color: #01A9DB'>
 <form action='${requestUri}' method='get'>
 
-	<div style='position: absolute;margin-top:190px;margin-left:50px'>
-		<%
-		String[][] orderList = (String[][]) request.getAttribute("query");
-		for (int i = 0; i < orderList.length; i++) {
-			String s=orderList[i][1];
-			s=s.substring(7);
-		%>
+	<div style='position: absolute; margin-top: 190px; margin-left: 50px;width:100%;height:100%'>
+			<%
+				String[][] orderList = (String[][]) request.getAttribute("query");
+			for (int i = 0; i < orderList.length; i++) {
+				String s = orderList[i][1];
+				
+			%>
 		
 		<a href='<%=s%>'><%=orderList[i][0]%> </a> <br>連結<br>
 		<br>
