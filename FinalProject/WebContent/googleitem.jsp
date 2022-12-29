@@ -6,11 +6,18 @@
 <meta charset="UTF-8">
 <title>GoogleSearch</title>
 <style type="text/css">
+
+body {
+	background-image: url('images/back.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
 #padding{
 	padding: 0px 0px 15px 15px;
 }
 a {
-	color: #0B173B;
+	color: #FFFFFF;
 	font-size: 30px;
 	text-decoration: none;
 }
@@ -23,7 +30,7 @@ text-decoration:underline;
 </style>
 </head>
 <body>
-<body style='background-color: #01A9DB'>
+<body>
 <form action='${requestUri}' method='get'>
 
 	<div style='position: absolute; margin-top: 190px; margin-left: 50px;width:100%;height:100%'>
@@ -34,15 +41,15 @@ text-decoration:underline;
 				
 			%>
 		
-		<a href='<%=s%>'><%=orderList[i][0]%> </a> <br>連結<br>
+		<a href='<%=s%>'><%=orderList[i][0]%> </a> <br><br>
 		<br>
 		<%
 }
 %>
 	</div>
 	<div>
-		<img src="images/band-2.png"
-			style='position: absolute; width: 150px; height: 100px; left: 50%; top: 50%; margin-top: -280px; margin-left: -590px'>
+		<img src="images/logo.png"
+			style='position: absolute; width: 150px; height: 100px; left: 50%; top: 50%; margin-top: -310px; margin-left: -590px'>
 	</div>
 		<div>
 		<input type='text' class="border-style" id="padding" name='keyword'

@@ -6,6 +6,13 @@
 <meta charset="UTF-8">
 <title>GoogleSearch</title>
 <style type="text/css">
+body {
+	background-image: url('images/20511233.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
 .button{
 	position:absolute;
 	width:45px;
@@ -236,10 +243,10 @@ function click80() {
 }
 </script>
 </head>
-<body style='background-color:#0489B1'>
+<body ><!-- style='background-color:#FFFFDE' -->
 <form action='${requestUri}' method='get'>
 
-<div class = 'box'style = 'position:absolute;margin-top:530px;margin-left:635px;'></div>
+<!-- <div class = 'box'style = 'position:absolute;margin-top:530px;margin-left:635px;'></div>
 <div class='note'>
 <img src="images/musical-note.png" style = 'position:absolute;width:40px;height:40px;margin-top:520px' >
 </div> 
@@ -251,14 +258,14 @@ function click80() {
 </div>
 <div class='note3'>
 <img src="images/musical-note-2.png" style = 'position:absolute;width:40px;height:40px;margin-top:520px' >
-</div>  
+</div>   -->
 <div>
 <input type='text' class="border-style" id="padding"  
 style='font-size:120%;position:absolute;left:50%;top:48%;
 margin-top:-47px;margin-left:-400px;width:800px;height:45px' name='keyword' placeholder='請輸入關鍵字'
 onfocus="placeholder= '' " onblur="placeholder='請輸入關鍵字'" />
 </div>
-<div>
+<!-- <div>
 <button type='button' class='button' name='button20' onclick='click10()' style='border-radius:10px;cursor:pointer;margin-left:-100px'>10</button>
 </div>
 <div>
@@ -272,14 +279,14 @@ onfocus="placeholder= '' " onblur="placeholder='請輸入關鍵字'" />
 </div>
 <div>
 <input type='text' name='searchNum' value='10' style='color:#0489B1;border-style:none;background-color:#E6E6FA'>
-</div>
+</div> -->
 <div>
 <input type='image' src="images/loupe-2.png" 
 style='position:absolute;width:37px;height:37px;left:50%;top:50%;margin-top:-55px;
 margin-left:368px '/>
 </div>
 <div>
-<a href ='http://localhost:8080/Final_Project/TestProject'><img src="images/band-2.png" style='position:absolute;width:350px;height:150px;left:50%;top:50%;margin-top:-265px;
+<a href ='http://localhost:8080/Final_Project/TestProject'><img src="images/logo.png" style='position:absolute;width:350px;height:150px;left:50%;top:50%;margin-top:-265px;
 margin-left:-175px '></a>
 </div>
 </form>
