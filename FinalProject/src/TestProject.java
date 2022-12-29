@@ -92,7 +92,7 @@ public class TestProject extends HttpServlet {
 		    
 		    s[num][0] = key;
 		    s[num][1] = value;
-		    System.out.printf("%s：%s",s[num][0],s[num][1]);
+		    //System.out.printf("%s：%s",s[num][0],s[num][1]);
 		    
 		    num++;
 		}
