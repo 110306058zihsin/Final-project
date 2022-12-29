@@ -225,7 +225,7 @@ body {
 }
 </style>
 <script type="text/javascript">
-function click10() {
+<!--function click10() {
 	document.getElementsByName("searchNum")[0].value = 10;
 	document.getElementsByName("searchNum")[0].style.color = '#0489B1';
 }
@@ -240,7 +240,7 @@ function click40() {
 function click80() {
 	document.getElementsByName("searchNum")[0].value = 80;
 	document.getElementsByName("searchNum")[0].style.color = '#0489B1';
-}
+}-->
 </script>
 </head>
 <body ><!-- style='background-color:#FFFFDE' -->
@@ -286,7 +286,7 @@ style='position:absolute;width:37px;height:37px;left:50%;top:50%;margin-top:-55p
 margin-left:368px '/>
 </div>
 <div>
-<a href ='http://localhost:8080/Final_Project/TestProject'><img src="images/logo.png" style='position:absolute;width:350px;height:150px;left:50%;top:50%;margin-top:-265px;
+<a href ='http://Final_Project/TestProject'><img src="images/logo.png" style='position:absolute;width:350px;height:150px;left:50%;top:50%;margin-top:-265px;
 margin-left:-175px '></a>
 </div>
 </form>

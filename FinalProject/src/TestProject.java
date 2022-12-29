@@ -51,6 +51,11 @@ public class TestProject extends HttpServlet {
 		KeywordList keywords=new KeywordList();
 		
 		keywords.animation();
+		keywords.campus();
+		keywords.fantasy();
+		keywords.action();
+		keywords.thriller();
+		keywords.sports();
 
 		CalcScore calc = new CalcScore(webPage,keywords );
 
@@ -68,16 +73,18 @@ public class TestProject extends HttpServlet {
 //		
 		
 		//HashMap<String,String> query=new HashMap<String,String>();
-		for(int i=0;i<retVal.size();i++) {
-			String url=score.get(retVal.get(i));
-			String title=webPage.get(url);
-			//query.put(title,url);
-			System.out.printf("%s：%s\n",title,url);
-		}
-		
+//		for(int i=0;i<retVal.size();i++) {
+//			String url=score.get(retVal.get(i));
+//			String title=webPage.get(url);
+//			//query.put(title,url);
+//			System.out.printf("%s：%s\n",title,url);
+//		}
+//		
 		
 		String[][] s = new String[webPage.size()][2];
+		
 		request.setAttribute("query", s);
+		
 		int num = 0;
 		for(int i=0;i<retVal.size();i++) {
 			String value = score.get(retVal.get(i));
@@ -85,8 +92,11 @@ public class TestProject extends HttpServlet {
 		    
 		    s[num][0] = key;
 		    s[num][1] = value;
+		    System.out.printf("%s：%s",s[num][0],s[num][1]);
+		    
 		    num++;
 		}
+		
 		request.getRequestDispatcher("googleitem.jsp")
 		 .forward(request, response); 
 		

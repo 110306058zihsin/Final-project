@@ -41,8 +41,11 @@ public class CalcScore {
 				//e.printStackTrace();
 			}
 		//test 每個網頁的權重
-			System.out.println(rootPage.score);//
-			score.put(rootPage.score, rootPage.url);
+			//
+			if(rootPage.score>=100.0) {
+				score.put(rootPage.score, rootPage.url);
+			}
+			//System.out.printf("%s：%f",rootPage.title,rootPage.score);
 		}
 		return score;
 	}
