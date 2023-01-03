@@ -18,7 +18,7 @@ public class CalcScore {
 	}
 
 	public HashMap<Double, String> calcScore() throws UnsupportedEncodingException {
-		System.out.printf("%d", 2);
+	
 		HashMap<Double, String> score = new HashMap<Double, String>();
 
 		ArrayList<WebPage> rootPages = new ArrayList<>();
