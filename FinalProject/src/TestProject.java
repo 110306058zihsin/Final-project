@@ -87,7 +87,7 @@ public class TestProject extends HttpServlet {
 			num++;
 		}
 
-		request.getRequestDispatcher("googleitem.jsp").forward(request, response);
+		request.getRequestDispatcher("resultPage.jsp").forward(request, response);
 
 	}
 
