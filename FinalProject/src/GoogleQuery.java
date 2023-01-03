@@ -16,14 +16,11 @@ import org.jsoup.select.Elements;
 
 public class GoogleQuery {
 	
-	//public String searchKeyword;//
-	//public String url;//
-	//public String content;//
+	
 	
 	public GoogleQuery()
 	{
-		//this.searchKeyword = searchKeyword;//
-		//this.url = "http://www.google.com/search?q="+searchKeyword+"&oe=utf8&num=20";//
+		
 	}
 	
 	private String fetchContent(String url) throws IOException

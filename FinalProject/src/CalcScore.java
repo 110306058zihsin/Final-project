@@ -12,18 +12,19 @@ public class CalcScore {
 	private ArrayList<Keyword> keywords;
 
 	public CalcScore(HashMap<String, String> webPage, KeywordList lst) {
+		
 		this.webPage = webPage;
 		keywords = lst.getKeywordList();
 	}
 
 	public HashMap<Double, String> calcScore() throws UnsupportedEncodingException {
-
+		System.out.printf("%d", 2);
 		HashMap<Double, String> score = new HashMap<Double, String>();
 
 		ArrayList<WebPage> rootPages = new ArrayList<>();
 
 		for (String url : webPage.keySet()) {
-//			String urlstr =  URLDecoder.decode(url.substring(7), "UTF-8");
+
 			
 			rootPages.add(new WebPage(url, webPage.get(url)));
 			
@@ -32,21 +33,24 @@ public class CalcScore {
 //		for(WebPage page:rootPages) {//
 //			System.out.print(page.url+"\n");
 //		}
-//	
+//		
+		
 		for (WebPage rootPage : rootPages) {
 			try {
 				rootPage.setScore(keywords);
 			} catch (IOException e) {
 				
 				//e.printStackTrace();
-			}
+			}	
 		//test 每個網頁的權重
 			//
 			if(rootPage.score>=100.0) {
 				score.put(rootPage.score, rootPage.url);
 			}
+			
 			//System.out.printf("%s：%f",rootPage.title,rootPage.score);
 		}
+		
 		return score;
 	}
 

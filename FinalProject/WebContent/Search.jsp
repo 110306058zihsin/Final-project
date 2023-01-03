@@ -224,62 +224,19 @@ body {
   }
 }
 </style>
-<script type="text/javascript">
-<!--function click10() {
-	document.getElementsByName("searchNum")[0].value = 10;
-	document.getElementsByName("searchNum")[0].style.color = '#0489B1';
-}
-function click20() {
-	document.getElementsByName("searchNum")[0].value = 20;
-	document.getElementsByName("searchNum")[0].style.color = '#0489B1';
-}
-function click40() {
-	document.getElementsByName("searchNum")[0].value = 40;
-	document.getElementsByName("searchNum")[0].style.color = '#0489B1';
-}
-function click80() {
-	document.getElementsByName("searchNum")[0].value = 80;
-	document.getElementsByName("searchNum")[0].style.color = '#0489B1';
-}-->
-</script>
+
 </head>
-<body ><!-- style='background-color:#FFFFDE' -->
+<body >
 <form action='${requestUri}' method='get'>
 
-<!-- <div class = 'box'style = 'position:absolute;margin-top:530px;margin-left:635px;'></div>
-<div class='note'>
-<img src="images/musical-note.png" style = 'position:absolute;width:40px;height:40px;margin-top:520px' >
-</div> 
-<div class='note1'>
-<img src="images/musical-note.png" style = 'position:absolute;width:40px;height:40px;margin-top:520px' >
-</div> 
-<div class='note2'>
-<img src="images/musical-note-2.png" style = 'position:absolute;width:40px;height:40px;margin-top:520px' >
-</div>
-<div class='note3'>
-<img src="images/musical-note-2.png" style = 'position:absolute;width:40px;height:40px;margin-top:520px' >
-</div>   -->
+
 <div>
 <input type='text' class="border-style" id="padding"  
 style='font-size:120%;position:absolute;left:50%;top:48%;
 margin-top:-47px;margin-left:-400px;width:800px;height:45px' name='keyword' placeholder='請輸入關鍵字'
 onfocus="placeholder= '' " onblur="placeholder='請輸入關鍵字'" />
 </div>
-<!-- <div>
-<button type='button' class='button' name='button20' onclick='click10()' style='border-radius:10px;cursor:pointer;margin-left:-100px'>10</button>
-</div>
-<div>
-<button type='button' class='button' name='button40' onclick='click20()' style='border-radius:10px;cursor:pointer;margin-left:-47.5px'>20</button>
-</div>
-<div>
-<button type='button' class='button' name='button60' onclick='click40()' style='border-radius:10px;cursor:pointer;margin-left:2.5px'>40</button>
-</div>
-<div>
-<button type='button' class='button' name='button80' onclick='click80()' style='border-radius:10px;cursor:pointer;margin-left:52.5px'>80</button>
-</div>
-<div>
-<input type='text' name='searchNum' value='10' style='color:#0489B1;border-style:none;background-color:#E6E6FA'>
-</div> -->
+
 <div>
 <input type='image' src="images/loupe-2.png" 
 style='position:absolute;width:37px;height:37px;left:50%;top:50%;margin-top:-55px;
