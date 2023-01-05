@@ -65,11 +65,6 @@ public class GoogleQuery {
 		HashMap<String, String> retVal = new HashMap<String, String>();
 
 		
-		/* 
-		 * some Jsoup source
-		 * https://jsoup.org/apidocs/org/jsoup/nodes/package-summary.html
-		 * https://www.1ju.org/jsoup/jsoup-quick-start
- 		 */
 		
 		//using Jsoup analyze html string
 		Document doc = Jsoup.parse(content);
@@ -101,7 +96,7 @@ public class GoogleQuery {
 				citeUrl.replaceAll(" ", "%20");
 
 				//test 爬到幾個網址
-//				System.out.println("Title: " + title + " , url: " + urlstr);
+				System.out.println("Title: " + title + " , url: " + urlstr);
 				
 				//put title and pair into HashMap
 				retVal.put(urlstr, title);

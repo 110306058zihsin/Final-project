@@ -1,3 +1,8 @@
+//CalcScore 門檻調整
+//GoogleQuery url進不去的問題還是得解決
+//WordCounter 字串比對改Boyer Moore
+//爬進子網頁算權重
+//相關關鍵字
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -24,7 +29,7 @@ public class TestProject extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-		throws ServletException, IOException {
+			throws ServletException, IOException {
 
 		response.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8");
@@ -36,7 +41,6 @@ public class TestProject extends HttpServlet {
 			return;
 		}
 
-		
 		GoogleQuery google = new GoogleQuery();
 
 		HashMap<String, String> webPage = google.query(request.getParameter("keyword"));// query 裡面到時候要看怎麼連前端使用者輸入
@@ -44,11 +48,11 @@ public class TestProject extends HttpServlet {
 		KeywordList keywords = new KeywordList();
 
 		keywords.animation();
-		keywords.campus();
-		keywords.fantasy();
-		keywords.action();
-		keywords.thriller();
-		keywords.sports();
+//		keywords.campus();
+//		keywords.fantasy();
+//		keywords.action();
+//		keywords.thriller();
+//		keywords.sports();
 //
 		CalcScore calc = new CalcScore(webPage, keywords);
 
@@ -57,12 +61,11 @@ public class TestProject extends HttpServlet {
 		List<Double> retVal = calc.sort(score);
 
 		// test 排序完後的分數
-//			System.out.println(score.keySet());
-
-//			for(Double b:retVal) {
-//				System.out.println(b);
-//			}
-//		
+//		System.out.println(score.keySet());
+//
+		for (Double b : retVal) {
+			System.out.println(b);
+		}
 
 //		HashMap<String, String> query = new HashMap<String, String>();
 //		for (int i = 0; i < retVal.size(); i++) {
@@ -72,7 +75,7 @@ public class TestProject extends HttpServlet {
 //			System.out.printf("%s：%s\n", title, url);
 //		}
 
-		String[][] s = new String[webPage.size()][2];
+		String[][] s = new String[retVal.size()][2];
 
 		request.setAttribute("query", s);
 
@@ -83,9 +86,13 @@ public class TestProject extends HttpServlet {
 
 			s[num][0] = key;
 			s[num][1] = value;
+			System.out.printf("%s,%s\n", key, value);
+
+//			System.out.printf("%s：%s%n",s[num][0],s[num][1]);
 
 			num++;
 		}
+		
 
 		request.getRequestDispatcher("resultPage.jsp").forward(request, response);
 

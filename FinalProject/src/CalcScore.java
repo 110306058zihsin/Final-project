@@ -44,7 +44,7 @@ public class CalcScore {
 			}	
 		//test 每個網頁的權重
 			//
-			if(rootPage.score>=100.0) {
+			if(rootPage.score>=0) {
 				score.put(rootPage.score, rootPage.url);
 			}
 			
