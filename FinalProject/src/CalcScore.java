@@ -40,11 +40,11 @@ public class CalcScore {
 				rootPage.setScore(keywords);
 			} catch (IOException e) {
 				
-				//e.printStackTrace();
+//				e.printStackTrace();
 			}	
 		//test 每個網頁的權重
 			//
-			if(rootPage.score>=0) {
+			if(rootPage.score>=100) {
 				score.put(rootPage.score, rootPage.url);
 			}
 			

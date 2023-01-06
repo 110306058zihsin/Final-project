@@ -15,21 +15,17 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class GoogleQuery {
-	
-	
-	
-	public GoogleQuery()
-	{
-		
+
+	public GoogleQuery() {
+
 	}
-	
-	private String fetchContent(String url) throws IOException
-	{
+
+	private String fetchContent(String url) throws IOException {
 		String retVal = "";
 
 		URL u = new URL(url);
 		URLConnection conn = u.openConnection();
-		//set HTTP header
+		// set HTTP header
 		conn.setRequestProperty("User-agent", "Chrome/107.0.5304.107");
 		InputStream in = conn.getInputStream();
 
@@ -37,14 +33,13 @@ public class GoogleQuery {
 		BufferedReader bufReader = new BufferedReader(inReader);
 		String line = null;
 
-		while((line = bufReader.readLine()) != null)
-		{
+		while ((line = bufReader.readLine()) != null) {
 			retVal += line;
 		}
 		return retVal;
 	}
-	public HashMap<String, String> query(String searchKeyword) throws IOException
-	{
+
+	public HashMap<String, String> query(String searchKeyword) throws IOException {
 		String[] splitStr = searchKeyword.split(" ");
 		if (splitStr.length > 1) {
 			String comb = "";
@@ -57,27 +52,22 @@ public class GoogleQuery {
 			searchKeyword += "動漫";
 		}
 
-		
 		String url = "http://www.google.com/search?q=" + searchKeyword + "&oe=utf8&num=20";
 		System.out.println("url: " + url);
 
 		String content = fetchContent(url);
 		HashMap<String, String> retVal = new HashMap<String, String>();
 
-		
-		
-		//using Jsoup analyze html string
+		// using Jsoup analyze html string
 		Document doc = Jsoup.parse(content);
-		
-		//select particular element(tag) which you want 
+
+		// select particular element(tag) which you want
 		Elements lis = doc.select("div");
 		lis = lis.select(".kCrYT");
-		
-		for(Element li : lis)
-		{
-			try 
-			{
-				//解析網址，把網址格式和protocol改成一致，避免訪問失敗
+
+		for (Element li : lis) {
+			try {
+				// 解析網址，把網址格式和protocol改成一致，避免訪問失敗
 				String citeUrl = li.select("a").get(0).attr("href");
 				if (citeUrl.startsWith("/url?q=")) {
 					citeUrl = citeUrl.replace("/url?q=", "");
@@ -87,28 +77,65 @@ public class GoogleQuery {
 					citeUrl = splittedString[0];
 				}
 				String title = li.select("a").get(0).select(".vvjwJb").text();
-				
-				if(title.equals("")) 
-				{
+
+				if (title.equals("")) {
 					continue;
 				}
-				String urlstr=URLDecoder.decode(citeUrl,"UTF-8");
-				citeUrl.replaceAll(" ", "%20");
+				String urlstr = URLDecoder.decode(citeUrl, "UTF-8");
+//				citeUrl.replaceAll(" ", "%20");
 
-				//test 爬到幾個網址
+				// test 爬到幾個網址
 				System.out.println("Title: " + title + " , url: " + urlstr);
-				
-				//put title and pair into HashMap
+
+				// put title and pair into HashMap
 				retVal.put(urlstr, title);
 
-			} catch (IndexOutOfBoundsException e) 
-			{
+			} catch (IndexOutOfBoundsException e) {
 //				e.printStackTrace();
 			}
 		}
 		return retVal;
 	}
-	
-	
 
+	public HashMap<String, String> relate(String searchKeyword) throws IOException {
+		String[] splitStr = searchKeyword.split(" ");
+		if (splitStr.length > 1) {
+			String comb = "";
+			for (int i = 0; i < splitStr.length; i++) {
+				comb += splitStr[i] + "+";
+			}
+			searchKeyword = comb;
+		}
+		if (!searchKeyword.contains("動漫")) {
+			searchKeyword += "動漫";
+		}
+
+		String url = "http://www.google.com/search?q=" + searchKeyword + "&oe=utf8&num=20";
+		System.out.println("url: " + url);
+
+		String content = fetchContent(url);
+		HashMap<String, String> retVal = new HashMap<String, String>();
+
+		// using Jsoup analyze html string
+		Document doc = Jsoup.parse(content);
+
+		// select particular element(tag) which you want
+		Elements lis = doc.select("a[class]");
+		lis = lis.select(".Q71vJc");
+
+		for (Element li : lis) {
+			String citeUrl = li.attr("href");
+			String urlstr = URLDecoder.decode(citeUrl, "UTF-8");
+			urlstr="http://www.google.com"+urlstr;
+			//citeUrl.replaceAll(" ", "%20");
+			
+			String title = li.select(".s3v9rd").text();
+			if (title.equals("")) {
+				continue;
+			}
+			retVal.put(urlstr, title);	
+
+		}
+		return retVal;
+	}
 }

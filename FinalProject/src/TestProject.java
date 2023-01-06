@@ -1,8 +1,7 @@
-//CalcScore 門檻調整
-//GoogleQuery url進不去的問題還是得解決
-//WordCounter 字串比對改Boyer Moore
+
+
 //爬進子網頁算權重
-//相關關鍵字
+//相關關鍵字 class EIaa9b
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -59,6 +58,8 @@ public class TestProject extends HttpServlet {
 		HashMap<Double, String> score = calc.calcScore();
 
 		List<Double> retVal = calc.sort(score);
+		
+		HashMap<String, String> relate = google.relate(request.getParameter("keyword"));
 
 		// test 排序完後的分數
 //		System.out.println(score.keySet());
@@ -94,6 +95,23 @@ public class TestProject extends HttpServlet {
 		}
 		
 
+//		request.getRequestDispatcher("resultPage.jsp").forward(request, response);
+		
+		String[][] r = new String[relate.size()][2];
+
+		request.setAttribute("relate", r);
+
+		int n = 0;
+		for (String relateUrl:relate.keySet()) {
+			String title = relate.get(relateUrl);
+			String url = relateUrl;
+
+			r[n][0] = title;
+			r[n][1] = url;
+			System.out.printf("%s,%s\n", title, url);
+
+			n++;
+		}
 		request.getRequestDispatcher("resultPage.jsp").forward(request, response);
 
 	}

@@ -38,28 +38,93 @@ public class WordCounter {
 		return retVal;
 	}
 
+	public int BoyerMoore(String T, String P) {// P is key word
+		int i = P.length() - 1;
+		int j = P.length() - 1;
+		do {
+			if (T.charAt(i) == P.charAt(j)) {
+				if (j == 0) {
+					return i;
+				} else {
+					i--;
+					j--;
+
+				}
+			} else {
+				i = i + P.length() - min(j, 1 + last(T.charAt(i), P));
+				j = P.length() - 1;
+			}
+
+		} while (i <= T.length() - 1);
+		return -1;
+
+	}
+
+	public int min(int a, int b) {
+		if (a < b)
+			return a;
+		else if (b < a)
+			return b;
+		else
+			return a;
+	}
+
+	public int last(char c, String P) {
+		for (int i = P.length() - 1; i >= 0; i--) {
+			if (P.charAt(i) == c) {
+				return i;
+			}
+
+		}
+		return -1;
+
+	}
+
 	public int countKeyword(String keyword) throws IOException {
 		if (content == null) {
 			content = fetchContent();
 		}
+		// To do a case-insensitive search, we turn the whole content and keyword into
+		// upper-case:
 		content = content.toUpperCase();
 		keyword = keyword.toUpperCase();
-		
-		if (!(content.contains("動漫"))) {
-			return 0;
-		} else {
-
-
-			int retVal = 0;
-			int fromIdx = 0;
-			int found = -1;
-
-			while ((found = content.indexOf(keyword, fromIdx)) != -1) {
-				retVal++;
-				fromIdx = found + keyword.length();
-			}
-
-			return retVal;
+//
+//		
+		int retVal = 0;
+		int i = content.length();
+		int j = keyword.length();
+		int n = BoyerMoore(content, keyword);
+		while (n != -1) {
+			content = content.substring(n + j, i);
+			i = content.length();
+			n = BoyerMoore(content, keyword);
+			retVal++;
 		}
+		return retVal;
 	}
+
+//	public int countKeyword(String keyword) throws IOException {
+//		if (content == null) {
+//			content = fetchContent();
+//		}
+//		content = content.toUpperCase();
+//		keyword = keyword.toUpperCase();
+//		
+//		if (!(content.contains("動漫"))) {
+//			return 0;
+//		} else {
+//
+//
+//			int retVal = 0;
+//			int fromIdx = 0;
+//			int found = -1;
+//
+//			while ((found = content.indexOf(keyword, fromIdx)) != -1) {
+//				retVal++;
+//				fromIdx = found + keyword.length();
+//			}
+//
+//			return retVal;
+//		}
+//	}
 }

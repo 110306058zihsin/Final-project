@@ -95,8 +95,8 @@ public class KeywordList {
 //		lst.add(new Keyword("東映", 1));
 //		lst.add(new Keyword("吉卜力", 1));
 
-		lst.add(new Keyword("animation", 5));
-		lst.add(new Keyword("anime", 5));
+//		lst.add(new Keyword("animation", 5));
+//		lst.add(new Keyword("anime", 5));
 		lst.add(new Keyword("manga", 5));
 //		lst.add(new Keyword("OP", 4));
 //		lst.add(new Keyword("ED", 4));
