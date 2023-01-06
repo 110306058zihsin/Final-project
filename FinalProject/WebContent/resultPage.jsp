@@ -39,6 +39,7 @@ a:hover {
 
 		<div
 			style='font-size: 30px;position: absolute; margin-top: 190px; margin-left: 50px; width: 100%; height: 100%'>
+			
 			<%
 			String[][] orderList = (String[][]) request.getAttribute("query");
 			for (int i = 0; i < orderList.length; i++) {
@@ -61,6 +62,7 @@ a:hover {
 		</div>
 		<div
 			style=' position: absolute;margin-top: 190px;right: 0px;  '>
+			<h1 style='color: #FFFFFF;'>相關搜尋：</h1>
 			<%
 			String[][] relate = (String[][]) request.getAttribute("relate");
 			for (int i = 0; i < relate.length; i++) {
