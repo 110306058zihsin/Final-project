@@ -1,3 +1,5 @@
+
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -12,49 +14,58 @@ public class CalcScore {
 	private ArrayList<Keyword> keywords;
 
 	public CalcScore(HashMap<String, String> webPage, KeywordList lst) {
-		
+
 		this.webPage = webPage;
 		keywords = lst.getKeywordList();
 	}
 
-	public HashMap<Double, String> calcScore() throws UnsupportedEncodingException {
-	
+	public HashMap<Double, String> calcScore() throws IOException {
+
 		HashMap<Double, String> score = new HashMap<Double, String>();
 
-		ArrayList<WebPage> rootPages = new ArrayList<>();
+		// 新增tree array
+		ArrayList<WebTree> trees = new ArrayList<WebTree>();
+
+		ArrayList<WebPage> rootPages = new ArrayList<WebPage>();
 
 		for (String url : webPage.keySet()) {
 
-			
 			rootPages.add(new WebPage(url, webPage.get(url)));
-			
+
 		}
-		//test 確認存到的網頁數量是否正確ㄋ
-//		for(WebPage page:rootPages) {//
-//			System.out.print(page.url+"\n");
-//		}
-//		
 		
+
 		for (WebPage rootPage : rootPages) {
-			try {
-				rootPage.setScore(keywords);
-			} catch (IOException e) {
-				
-//				e.printStackTrace();
-			}	
-		//test 每個網頁的權重
-			//
-			if(rootPage.score>=100) {
-				score.put(rootPage.score, rootPage.url);
-			}
+
 			
-			//System.out.printf("%s：%f",rootPage.title,rootPage.score);
-		}
+
+			WebTree tree = new WebTree(rootPage);
+			tree.buildTree(tree.root);
+			tree.root.setNodeScore(keywords);
+
+			
+			trees.add(tree);
+
+
+
+			// test 每個網頁的權重
+
 		
+			double treeScore = tree.getTreeScore();
+			if (treeScore >= 100) {
+				
+				System.out.println(treeScore+":"+rootPage.title);
+				
+				score.put(treeScore, rootPage.url);
+
+			}
+
+		
+		}
+
 		return score;
 	}
 
-	
 	public List<Double> sort(HashMap<Double, String> score) {
 		List<Double> retVal = new ArrayList<Double>();
 		for (Double sc : score.keySet()) {

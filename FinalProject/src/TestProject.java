@@ -42,17 +42,13 @@ public class TestProject extends HttpServlet {
 
 		GoogleQuery google = new GoogleQuery();
 
-		HashMap<String, String> webPage = google.query(request.getParameter("keyword"));// query 裡面到時候要看怎麼連前端使用者輸入
+		HashMap<String, String> webPage = google.query(request.getParameter("keyword"));
 
 		KeywordList keywords = new KeywordList();
 
 		keywords.animation();
-//		keywords.campus();
-//		keywords.fantasy();
-//		keywords.action();
-//		keywords.thriller();
-//		keywords.sports();
-//
+
+		
 		CalcScore calc = new CalcScore(webPage, keywords);
 
 		HashMap<Double, String> score = calc.calcScore();
@@ -60,21 +56,14 @@ public class TestProject extends HttpServlet {
 		List<Double> retVal = calc.sort(score);
 		
 		HashMap<String, String> relate = google.relate(request.getParameter("keyword"));
+		System.out.println();
+		
 
 		// test 排序完後的分數
-//		System.out.println(score.keySet());
-//
 		for (Double b : retVal) {
 			System.out.println(b);
 		}
 
-//		HashMap<String, String> query = new HashMap<String, String>();
-//		for (int i = 0; i < retVal.size(); i++) {
-//			String url = score.get(retVal.get(i));
-//			String title = webPage.get(url);
-//			// query.put(title,url);
-//			System.out.printf("%s：%s\n", title, url);
-//		}
 
 		String[][] s = new String[retVal.size()][2];
 
@@ -89,13 +78,9 @@ public class TestProject extends HttpServlet {
 			s[num][1] = value;
 			System.out.printf("%s,%s\n", key, value);
 
-//			System.out.printf("%s：%s%n",s[num][0],s[num][1]);
-
 			num++;
 		}
 		
-
-//		request.getRequestDispatcher("resultPage.jsp").forward(request, response);
 		
 		String[][] r = new String[relate.size()][2];
 
